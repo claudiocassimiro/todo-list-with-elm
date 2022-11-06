@@ -93,6 +93,7 @@ formAttributes =
     , style "display" "flex"
     , style "flex-direction" "column"
     , style "align-items" "center"
+    , style "position" "relative"
     , style "background-color" "cyan"
     ]
 
@@ -123,5 +124,9 @@ view model =
         ]
         , div divStyle
         [ol [] (List.indexedMap viewTodo model.todos)]
-        
+        , div [style "position" "absolute", style "bottom" "0", style "margin-bottom" "20px", style "display" "flex", style "align-items" "center"]
+        [
+            p [] [text "made with 💙"]
+            , a [href "https://github.com/claudiocassimiro/todo-list-with-elm", target "_blank"] [text "Link to project on github"]
+        ]
         ]
